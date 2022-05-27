@@ -1,6 +1,6 @@
 <header class="fixed-top" id="header">
     <div style="width: 190px; display: flex; align-items: center; padding-left: 12px;">
-        <img src="/public/img/icons/escudo.png" height="38">
+        <img src="/public/img/icons/escudo.png" height="35">
         <span class="fw-bold ms-2 text-uppercase" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
             <?= EMPRESA ?>
         </span>

@@ -16,5 +16,6 @@ Este proyecto sirve como guia para un pequeño gestor de contenido y administrad
 * Administrador amigable para su uso
 
 ### Configuración
-* Crear la base de datos
-* Cambiar nombre del archivo Config.demo.php por Config.php con los datos correspondientes
+* Crear base de datos
+* En el archivo config.php ajustar las constantes
+* Crear las carpetas dentro de public : /img/galerias /img/banner /video /files
