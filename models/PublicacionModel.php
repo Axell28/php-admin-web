@@ -65,7 +65,7 @@ class PublicacionModel extends DataBase
                 ->innerJoin('categorias ct ON ct.idcatg = pb.idcatg')
                 ->select(null)
                 ->select('pb.idpub, pb.idcatg, ct.nombre as categoria, pb.titulo, pb.tagname, pb.portada, pb.fecpub, pb.visible')
-                ->where("pb.idcatg LIKE '{$categoria}'")
+                ->where("pb.idcatg LIKE '{$categoria}' AND ct.estado = 'A'")
                 ->orderBy('fecpub DESC')
                 ->limit(PUB_MAX_ADMIN)
                 ->offset($init)
@@ -124,9 +124,13 @@ class PublicacionModel extends DataBase
     {
         try {
             if ($isWeb) {
-                $query = $this->bd->from('publicacion')->select(null)->select('COUNT(*) as total')->where("idcatg LIKE '{$categoria}' AND fecpub <= NOW() AND visible = 'S'")->fetch('total');
+                $query = $this->bd->from('publicacion pb')
+                    ->innerJoin('categorias ct ON ct.idcatg = pb.idcatg')
+                    ->select(null)->select('COUNT(*) as total')->where("pb.idcatg LIKE '{$categoria}' AND pb.fecpub <= NOW() AND pb.visible = 'S' AND ct.estado = 'A'")->fetch('total');
             } else {
-                $query = $this->bd->from('publicacion')->select(null)->select('COUNT(*) as total')->where("idcatg LIKE '{$categoria}'")->fetch('total');
+                $query = $this->bd->from('publicacion pb')
+                    ->innerJoin('categorias ct ON ct.idcatg = pb.idcatg')
+                    ->select(null)->select('COUNT(*) as total')->where("pb.idcatg LIKE '{$categoria}' AND ct.estado = 'A'")->fetch('total');
             }
             return $query;
         } catch (\PDOException $e) {

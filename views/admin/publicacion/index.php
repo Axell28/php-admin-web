@@ -182,7 +182,7 @@
                             <input type="text" class="form-control" id="txtcategoria" placeholder="Nombre de categoría">
                             <span class="btn btn-success text-white" onclick="actionCategoria('save')"><i class="fas fa-plus"></i>&nbsp; Agregar</span>
                         </div> -->
-                        <table class="table">
+                        <table class="table mb-4">
                             <thead style="font-size: 13px;">
                                 <tr>
                                     <th class="text-center">#</th>
@@ -208,6 +208,9 @@
                                 <?php } ?>
                             </tbody>
                         </table>
+                        <button class="btn btn-outline-info w-100" id="btn-categ-reload" onclick="location.href = '/admin/publicacion/all'" disabled>
+                            <i class="fas fa-sync-alt"></i>&nbsp; Realizar cambios
+                        </button>
                     </div>
                 </div>
             </div>
@@ -277,7 +280,6 @@
                 const estado = document.getElementById('catcheck-' + idcateg).checked;
                 url += `/${idcateg}/${estado ? 'A' : 'I'}`;
             }
-            console.log(url);
             fetch(url, {
                 method: 'GET'
             }).then(function(res) {
@@ -290,6 +292,7 @@
                 } else {
                     alert(res);
                 }
+                document.getElementById('btn-categ-reload').disabled = false;
             });
         }
 
