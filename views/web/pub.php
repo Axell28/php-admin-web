@@ -188,6 +188,16 @@ if (isset($URI[1])) {
 
     <br><br><br>
 
+    <script>
+        (function() {
+            let tables = document.querySelectorAll('table');
+            tables.forEach(element => {
+                element.removeAttribute('style');
+                element.classList.add('table');
+                element.classList.add('table-bordered');
+            });
+        })();
+    </script>
 
 </body>
 
