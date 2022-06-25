@@ -353,7 +353,7 @@
                         <div class="file-item" onclick="agregarItem('${file.path}', '${file.type}')">
                             <i class="${file.icon} fs-3"></i>
                             <div class="file-item-detalle" title="${file.name}">
-                                <a href="${file.path}">${file.name}</a>
+                                <a href="${file.path}" onclick="return false;">${file.name}</a>
                                 <div style="font-size: 13px;">${file.size}</div>
                             </div>
                         </div>
