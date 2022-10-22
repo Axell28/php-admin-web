@@ -41,6 +41,7 @@ class ArchivosModel
         while (($file = $dir->read()) !== false) {
             if ($file != '..' && $file != '.') :
                 $list[] = array(
+                    "id" => rand(100, 99999),
                     "name" => utf8_encode($file),
                     "type" => pathinfo($file, PATHINFO_EXTENSION),
                     "size" => $this->obtenerSize($dir->path . $file),

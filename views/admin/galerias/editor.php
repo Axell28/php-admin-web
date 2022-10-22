@@ -120,6 +120,10 @@
         #cantFiles {
             font-size: 15px;
         }
+
+        #modalFiles img.selected {
+            filter: grayscale(250%);
+        }
     </style>
 
 
@@ -202,7 +206,7 @@
                         <div class="row px-2 pb-1" v-if="modoFiles == 'I'">
                             <div class="col-sm-2" v-for="(item, index) in listFiles" style="padding: 2px;">
                                 <div class="file-item-img">
-                                    <img :src="item.path" :title="item.name" @click="agregarItem(item.path, 'I')">
+                                    <img :src="item.path" :id="'img' + item.id" :title="item.name" @click="agregarItem(item.path, 'I', item.id)">
                                 </div>
                             </div>
                             <div class="col-sm-2" style="padding: 2px;">
@@ -261,7 +265,7 @@
                 }
             },
             methods: {
-                agregarItem(path, tipo) {
+                agregarItem(path, tipo, cod) {
                     let portada = '';
                     if (tipo == 'V' || tipo == 'Y') {
                         portada = '<?= PATH_PUBLIC ?>/img/icons/admin_portada_video.png';
@@ -269,12 +273,22 @@
                         portada = path;
                     }
                     this.listGallery.push({
+                        id: cod,
                         tipo: tipo,
                         content: path,
                         portada: portada
                     });
+                    // agregar class 'selected' a la imagen
+                    let element = document.getElementById('img' + cod);
+                    element.classList.add('selected');
+                    // -- end --
                 },
                 eliminarItem(index) {
+                    // eliminar class 'selected' a la imagen
+                    let id = this.listGallery[index].id;
+                    let element = document.getElementById('img' + id);
+                    element.classList.remove('selected');
+                    // -- end --
                     this.listGallery.splice(index, 1);
                 },
                 cambiarModo(event) {
