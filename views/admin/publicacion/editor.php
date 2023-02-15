@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex" />
-    <title>ADMIN - <?= mb_strtoupper(EMPRESA, 'UTF-8') ?></title>
+    <title>ADMIN - <?= mb_strtoupper(NOMB_EMPRESA, 'UTF-8') ?></title>
     <link rel="shortcut icon" href="<?= PATH_PUBLIC ?>/img/icons/escudo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="<?= PATH_PUBLIC ?>/css/bootstrap.min.css">
@@ -155,7 +155,7 @@
                                 </select>
                             <?php } ?>
                             <span><?= $this->translate('Fecha de publicación') ?> :</span>
-                            <input type="datetime-local" class="form-control mt-1 mb-3" name="fecpub" value="<?= \Admin\Core\Funciones::parseDateTime($this->dataPub['fecpub']) ?>">
+                            <input type="datetime-local" class="form-control mt-1 mb-3" name="fecpub" value="<?= \Admin\Core\Functions::parseDateTime($this->dataPub['fecpub']) ?>">
                             <span><?= $this->translate('Detalle') ?> :</span>
                             <textarea class="form-control mt-1 mb-3" rows="1" name="detalle" id="detalle" maxlength="170" placeholder="Opcional"><?= $this->dataPub['detalle'] ?></textarea>
                             <span><?= $this->translate('Imágen de portada') ?> :</span>

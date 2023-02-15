@@ -222,6 +222,8 @@ $dataPublicaciones = $objPublicaciones->listPublicacionesInWeb(0, 3);
 
     <br><br><br>
 
+    <?php include_once PATH_ROOT . '/views/web/partials/footer.php'; ?>
+
 </body>
 
 </html>

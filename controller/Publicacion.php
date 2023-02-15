@@ -1,7 +1,7 @@
 <?php
 
 use Admin\Core\View;
-use Admin\Core\Funciones;
+use Admin\Core\Functions;
 use Admin\Core\Controller;
 use Admin\Models\CategoriasModel;
 use Admin\Models\PublicacionModel;
@@ -70,7 +70,7 @@ class Publicacion extends Controller
     {
         if (parent::isPost()) {
             $params = parent::postAll();
-            $params['tagname'] = Funciones::formatoURL($params['titulo']);
+            $params['tagname'] = Functions::formatoURL($params['titulo']);
             unset($params['idpub']);
             $objPublicaciones = new PublicacionModel();
             $resp = $objPublicaciones->insertarPublicacion($params);
@@ -135,7 +135,7 @@ class Publicacion extends Controller
             if ($action == 'save') {
                 $params = array();
                 $params['nombre'] = $value;
-                $params['filtro'] = Funciones::formatoURL($value);
+                $params['filtro'] = Functions::formatoURL($value);
                 $params['estado'] = 'A';
                 $resp = $objCategorias->insertar($params);
             } else {

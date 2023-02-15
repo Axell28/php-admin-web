@@ -11,6 +11,7 @@ class DataBase
     private $user = BD_USER;
     private $pass = BD_PASS;
     private $port = BD_PORT;
+    protected $connection = null;
 
     public function connect()
     {

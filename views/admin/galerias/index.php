@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex" />
-    <title>ADMIN - <?= mb_strtoupper(EMPRESA, 'UTF-8') ?></title>
+    <title>ADMIN - <?= mb_strtoupper(NOMB_EMPRESA, 'UTF-8') ?></title>
     <link rel="shortcut icon" href="<?= PATH_PUBLIC ?>/img/icons/escudo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="<?= PATH_PUBLIC ?>/css/bootstrap.min.css">
@@ -110,7 +110,7 @@
                         </div>
                         <div class="card-body border-top">
                             <a href="/galeria/<?= $val['idgaleria'] ?>" class="pub-titulo text-uppercase mb-2" target="_blank"><?= $val['titulo'] ?></a>
-                            <div><i class="far fa-calendar-alt"></i> <?= \Admin\Core\Funciones::obtenerFecha($val['fecreg']) ?></div>
+                            <div><i class="far fa-calendar-alt"></i> <?= \Admin\Core\Functions::obtenerFecha($val['fecreg']) ?></div>
                         </div>
                         <div class="card-footer d-flex align-items-center" style="padding-top: 12px; padding-bottom: 12px;">
                             <button class="btn btn-outline-success me-2" onclick="location.href = '/admin/galerias/editor/<?= $val['idgaleria'] ?>'" title="Editar"><i class="fas fa-pencil-alt"></i></button>

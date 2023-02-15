@@ -1,7 +1,7 @@
 <?php
 
 use Admin\Core\Controller;
-use Admin\Core\Funciones;
+use Admin\Core\Functions;
 use Admin\Core\View;
 use Admin\Models\LoginModel;
 
@@ -19,8 +19,8 @@ class Login extends Controller
     {
         if (parent::isPost()) {
             $objLogin = new LoginModel();
-            $name = Funciones::cleanString(parent::getPost('nombre'));
-            $pass = Funciones::cleanString(parent::getPost('pass'));
+            $name = Functions::cleanString(parent::getPost('nombre'));
+            $pass = Functions::cleanString(parent::getPost('pass'));
             $resp = $objLogin->validarUsuario($name, $pass);
             if ($resp == 'OK') {
                 session_start();

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex" />
-    <title>ADMIN - <?= mb_strtoupper(EMPRESA, 'UTF-8') ?></title>
+    <title>ADMIN - <?= mb_strtoupper(NOMB_EMPRESA, 'UTF-8') ?></title>
     <link rel="shortcut icon" href="<?= PATH_PUBLIC ?>/img/icons/escudo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="<?= PATH_PUBLIC ?>/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
         <form id="formEmpresa" onsubmit="actualizar(event)" onkeypress="return event.keyCode != 13;">
             <div class="d-flex align-items-center">
                 <div class="tab-titulo">
-                    <?= $this->translate('EMPRESA') ?>
+                    <?= $this->translate('NOMB_EMPRESA') ?>
                 </div>
                 <div class="ms-auto d-flex align-items-center">
                     <?php

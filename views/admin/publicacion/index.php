@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex" />
-    <title>ADMIN - <?= mb_strtoupper(EMPRESA, 'UTF-8') ?></title>
+    <title>ADMIN - <?= mb_strtoupper(NOMB_EMPRESA, 'UTF-8') ?></title>
     <link rel="shortcut icon" href="<?= PATH_PUBLIC ?>/img/icons/escudo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href="<?= PATH_PUBLIC ?>/css/bootstrap.min.css">
@@ -147,7 +147,7 @@
                         <div class="card-body py-3">
                             <h6 class="pub-categoria text-uppercase fw-bold"><?= $pub['categoria'] ?></h6>
                             <a href="/pub/<?= $pub['tagname'] ?>" class="pub-titulo text-uppercase" target="_blank"><?= $pub['titulo'] ?></a>
-                            <p class="pub-fecha mt-2"><i class="far fa-calendar-alt"></i> <?= \Admin\Core\Funciones::obtenerFecha($pub['fecpub']) ?>&nbsp;&nbsp; <i class="far fa-clock"></i> <?= \Admin\Core\Funciones::obtenerHora($pub['fecpub']) ?></p>
+                            <p class="pub-fecha mt-2"><i class="far fa-calendar-alt"></i> <?= \Admin\Core\Functions::obtenerFecha($pub['fecpub']) ?>&nbsp;&nbsp; <i class="far fa-clock"></i> <?= \Admin\Core\Functions::obtenerHora($pub['fecpub']) ?></p>
                         </div>
                         <div class="card-footer d-flex align-items-center" style="padding-top: 12px; padding-bottom: 12px;">
                             <button class="btn btn-outline-success me-2" onclick="location.href = '/admin/publicacion/editor/<?= $pub['idpub'] ?>'" title="Editar"><i class="fas fa-pencil-alt"></i></button>

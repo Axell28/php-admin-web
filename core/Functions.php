@@ -2,7 +2,7 @@
 
 namespace Admin\Core;
 
-class Funciones
+class Functions
 {
     public static function getFechaActual()
     {

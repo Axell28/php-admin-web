@@ -8,11 +8,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/core/Config.php';
 require_once __DIR__ . '/core/Database.php';
 
-use Admin\Core\Funciones;
-use Admin\Models\EmpresaModel;
-
-// echo Funciones::generarPass('admin'); exit(1);
-define('EMPRESA', EmpresaModel::obtenerNombre());
+//echo Admin\Core\Functions::generarPass('12345'); exit(1);
+define('NOMB_EMPRESA', Admin\Models\EmpresaModel::obtenerNombre());
 
 $URI = isset($_GET['uri']) ? $_GET['uri'] : 'index';
 $URI = rtrim($URI, '/');
@@ -51,6 +48,7 @@ if ($URI[0] == 'admin') {
 } else {
     $fileView = __DIR__ . "/views/web/{$URI[0]}.php";
     if (file_exists($fileView)) {
+        $viewname = $URI[0];
         include_once $fileView;
     } else {
         include_once __DIR__ . "/views/web/404.php";

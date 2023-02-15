@@ -78,7 +78,11 @@ class GaleriasModel extends DataBase
         try {
             $query = $this->bd->from('galeria')->where("visible = 'S'")->orderBy('fecreg DESC')->fetchAll();
             if (is_array($query)) {
-                return $query;
+                $result = $query;
+                foreach ($result as &$val) {
+                    $val['cuerpo'] = json_decode($val['cuerpo'], true);
+                }
+                return $result;
             }
             return array();
         } catch (\PDOException $e) {
